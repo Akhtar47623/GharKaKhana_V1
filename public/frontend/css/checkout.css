@@ -1,0 +1,83 @@
+
+.checkout-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f8f9fa;
+}
+
+.checkout-section h2 {
+    font-weight: 700;
+    color: #343a40;
+}
+
+.card.h-100.shipping-info{
+    padding: 50px 100px;
+}
+.card {
+    border-radius: 10px;
+    border: none;
+    padding: 50px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.form-group label,
+.form-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+input.form-control
+ {
+    border-radius: 6px;
+    padding: 10px 33px 10px 10px;
+}
+
+.list-group-item {
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    background-color: transparent;
+}
+
+.btn-primary,
+.btn-success {
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 10px 25px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .checkout-section .row {
+        flex-direction: column;
+    }
+    .checkout-section .card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .checkout-section h2 {
+        font-size: 1.5rem;
+    }
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .list-group-item span {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+}

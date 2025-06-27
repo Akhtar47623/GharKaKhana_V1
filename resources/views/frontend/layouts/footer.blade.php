@@ -4,11 +4,11 @@
             <div class="mini-cart-expand-top">
                 <h3>{{__('sentence.yourorder') }}</h3>
                 <a href="javascript:;" title="" class="cart-close"><i class="fas fa-times"></i></a>
-            </div>           
+            </div>
             <div class="cart-item-wrap">
-                @if(session()->has('cart'))                         
+                @if(session()->has('cart'))
                 <div class="cart-items">
-                    <?php $count = 1; ?>                
+                    <?php $count = 1; ?>
                     @foreach(session('cart') as $k=>$date)
                     <?php $i=1; $stotal=0;?>
                     <table>
@@ -16,7 +16,7 @@
                             <tr>
                                 <th></th>
                                 <th>{{__('sentence.itemn') }}</th>
-                                <th>{{__('sentence.availt') }}</th>                                
+                                <th>{{__('sentence.availt') }}</th>
                                 <th>{{__('sentence.qt') }}</th>
                                 <th>{{__('sentence.rate') }}</th>
                                 <th>{{__('sentence.itemt') }}</th>
@@ -24,7 +24,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                         
+
                             @foreach($date as $id => $details)
                             @if($i==1)
                             <tr class="full-width">
@@ -34,9 +34,9 @@
                                     <span>{{ \Carbon\Carbon::parse($details['available_date'])->format('l d M, Y')}}</span>
                                 </div>
                             </tr>
-                            <?php $i=0; $count++;?> 
-                            @endif 
-                            <tr>                                
+                            <?php $i=0; $count++;?>
+                            @endif
+                            <tr>
                                 <td>
                                     <div class="cart-item-img">
                                         <img src="{{asset('public/frontend/images/menu/'.$details['photo'])}}" alt="">
@@ -47,26 +47,26 @@
                                         <h6>{{$details['item_name']}}</h6>
                                         <span>
                                             <?php $optionTotal=0; ?>
-                                            @if($details['option']!=NULL)                                            
+                                            @if($details['option']!=NULL)
                                             @foreach($details['option'] as $option)
                                             <b>{{$option['group_name']}}:</b> {{$option['option']}}<br>
                                             <?php $optionTotal += $option['rate']?>
                                             @endforeach
-                                            <br>{{__('sentence.adtotal') }}:  
-                                            {{!empty($currency)?$currency->symbol:''}} {{$optionTotal}}    
+                                            <br>{{__('sentence.adtotal') }}:
+                                            {{!empty($currency)?$currency->symbol:''}} {{$optionTotal}}
                                             @endif
                                         </span>
                                     </div>
                                 </td>
-                                <td>{{$details['available_time']}}</td>                                
+                                <td>{{$details['available_time']}}</td>
                                 <td>
-                                    <div class="cart-item-qty">                                        
+                                    <div class="cart-item-qty">
                                         <select name="quantity" class="quantity" data-id="{{$id}}" onchange="changeQuantity(this,'{{$id}}');">
                                             @for($i=$details['minimum_order'];$i<=30;$i++)
-                                            <option value={{$i}} 
+                                            <option value={{$i}}
                                             {{$i==$details['quantity']?"selected":""}}>{{$i}}</option>
-                                            @endfor                                                
-                                        </select>                                        
+                                            @endfor
+                                        </select>
                                     </div>
                                 </td>
                                 <td>
@@ -74,9 +74,9 @@
                                </td>
                                <td>
                                 <div class="cart-item-total">
-                                    <span class="price"> 
+                                    <span class="price">
                                         {{!empty($currency)?$currency->symbol:''}}
-                                        
+
                                         {{number_format($details['quantity']*($details['price']+$optionTotal),2)}}
                                     </span>
                                     <?php $stotal+=$details['quantity']*($details['price']+$optionTotal) ?>
@@ -88,12 +88,12 @@
                                 </div>
                             </td>
                         </tr>
-                        
+
                         @endforeach
                         <tr>
                             <td colspan="5" class="align-right">{{__('sentence.subtotal') }}:</td>
                             <td colspan="1" style="border: 0;">
-                                <h6>  
+                                <h6>
                                     {{!empty($currency)?$currency->symbol:''}} {{number_format($stotal,2)}}
                                 </h6>
                             </td>
@@ -106,16 +106,16 @@
                         </tr>
                     </tbody>
                 </table>
-                @endforeach  
-            </div>           
+                @endforeach
+            </div>
             @endif
-            
+
         </div>
     </div>
     <div class="mini-cart-bottom">
         <div class="mini-cart-bottom-left">
             <a href="javascript:;" title="" class="expand-cart active"></a>
-            <h4>{{__('sentence.yourorder') }} (<?php 
+            <h4>{{__('sentence.yourorder') }} (<?php
                 $count = 0;
                 if(session('cart')){
                     echo count(session('cart'));
@@ -125,15 +125,15 @@
                 ?>)</h4>
             </div>
             <div class="mini-cart-bottom-right">
-                <?php $subTotal=0.00; ?>                
+                <?php $subTotal=0.00; ?>
                 @if(session('cart'))
                 @foreach(session('cart') as $date)
                 @foreach($date as $id => $details)
                 <?php $optionTotal=0; ?>
                 @if($details['option']!=NULL)
-                @foreach($details['option'] as $option)                    
+                @foreach($details['option'] as $option)
                 <?php $optionTotal += $option['rate']?>
-                @endforeach    
+                @endforeach
                 @endif
                 <?php $subTotal += $details['quantity']*($details['price']+$optionTotal) ?>
                 @endforeach
@@ -142,7 +142,9 @@
                 <span>{{__('sentence.cartt') }}:
                     {{!empty($currency)?$currency->symbol:''}}
                 {{number_format($subTotal,2)}}</span>
+                <a href="{{ route('checkout') }}" class="btn btn-success w-100 mt-3">Proceed to Checkout</a>
                 <!--  <a href="{{ route('clear-cart','all') }}" title="">Clear Cart</a> -->
+
             </div>
         </div>
     </div>
@@ -177,7 +179,7 @@
         <div class="order-info">
             <h4>{{__('sentence.hwad') }}</h4>
         </div>
-        
+
         <div class="order-rating">
             <span>{{__('sentence.ratetd') }}</span>
             <div id="del"></div>
@@ -189,7 +191,7 @@
         @endif
         <div class="rating-btn">
             <button id="btnSubmit" type="submit">{{__('sentence.submit') }}</button>
-            <button id="btnSkip" type="button" data-action="{{route('review.skip')}}">{{__('sentence.skip') }}</button>            
+            <button id="btnSkip" type="button" data-action="{{route('review.skip')}}">{{__('sentence.skip') }}</button>
         </div>
         {{ Form::close() }}
     </div>
@@ -199,7 +201,7 @@
 <footer class="footer-main">
     <div class="container">
 
-                            
+
         <div class="footer-wrap">
             <div class="footer-top">
                 <div class="footer-country footer-select">
@@ -209,15 +211,15 @@
                         <option value="{{$c->country_id}}" {{ session()->get('country_id') == $c->country_id ? 'selected' : ''}}>{{$c->country->name}}</option>
                         @endforeach
                     </select>
-                    @endif       
+                    @endif
                 </div>
-                
-                <div class="footer-language footer-select">
+
+                {{-- <div class="footer-language footer-select">
                     <select class="selectbox" onchange="location = this.options[this.selectedIndex].value;">
                         <option value="{{ url('locale/en') }}" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
-                        <option value="{{ url('locale/es') }}" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Español</option>                                 
+                        <option value="{{ url('locale/es') }}" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Español</option>
                     </select>
-                </div>
+                </div> --}}
             </div>
             <div class="footer-left">
                 <div class="footer-info">
@@ -276,7 +278,7 @@
                         </li>
                         <li>
                             <a href="#" title="">{{__('sentence.ourc') }}</a>
-                        </li>                       
+                        </li>
                     </ul>
                 </div> -->
                 <div class="footer-menu menu-two">
@@ -287,14 +289,14 @@
                         </li>
                         <li>
                             <a href="{{route('disclaimer')}}" title="">{{__('sentence.disclaimer') }}</a>
-                        </li>                        
+                        </li>
                     </ul>
                 </div>
-                
+
             </div>
         </div>
     </div>
 </footer>
 
 
-   
+

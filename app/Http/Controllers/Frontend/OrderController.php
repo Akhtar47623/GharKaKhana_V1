@@ -30,7 +30,7 @@ class OrderController extends Controller
 	public function orderView(){
         $country = Users::select('country_id')->where('id',auth('chef')->user()->id)->first();
         $currency = Countries::where('id',$country->country_id)->first();
-        
+
         //new dashboard
         $orderList=Order::with('user')
         ->where('chef_id',auth('chef')->user()->id)
@@ -41,7 +41,7 @@ class OrderController extends Controller
         $currency=[];
         if($countryId){
             $currency = Countries::where('id',$countryId->country_id)->first();
-        } 
+        }
         $pageData = [
                         'currency' => $currency,
                         'orderList'=> $orderList,
@@ -54,7 +54,7 @@ class OrderController extends Controller
         DB::beginTransaction();
         Helper::myLog('Order Status change : start');
         try {
-            if($status=="accepted"){           
+            if($status=="accepted"){
                 $orderUpdate = ['status'=>4,'accepted_at'=>now(),'accepted_at_timezone'=>$request->timezone];
             }elseif($status=="ready"){
                 $orderUpdate = ['status'=>5,'ready_at'=>now(),'ready_at_timezone'=>$request->timezone];
@@ -63,19 +63,19 @@ class OrderController extends Controller
             }elseif($status=='delivered'){
                 $orderUpdate = ['status'=>7,'completed_at'=>now(),'completed_at_timezone'=>$request->timezone];
                 $orderData=Order::where('id',$request->id)->first();
-                
+
                 $insertReviewRatingData=[
                     'uuid' => Helper::getUuid(),
                     'order_id' => $orderData->id,
                     'cust_id' => $orderData->cust_id,
                     'chef_id' => $orderData->chef_id,
                     'delivery_id' =>$orderData->delivery_company_id,
-                    'pick_del_option' => $orderData->pick_del_option,  
-                    'date_of_order' => $orderData->delivery_date                   
+                    'pick_del_option' => $orderData->pick_del_option,
+                    'date_of_order' => $orderData->delivery_date
                 ];
                 ReviewRating::create($insertReviewRatingData);
             }
-            Order::where('id', $request->id)->update($orderUpdate); 
+            Order::where('id', $request->id)->update($orderUpdate);
             DB::commit();
             Helper::myLog('Order Status change : finish');
             return \Response::json(['status'=> Config::get('constants.status.success'), 'msg' => 'Order Accepted'],200);
@@ -90,7 +90,7 @@ class OrderController extends Controller
         $id=$request->id;
         DB::beginTransaction();
         Helper::myLog('Order flag change : start');
-        try {                        
+        try {
             $updateData=['flag' => 1];
             Order::where('id', $id)->update($updateData);
             DB::commit();
@@ -111,8 +111,8 @@ class OrderController extends Controller
 
             if(!empty($order)){
                 foreach ($order->orderItems as $i) {
-                   $menuId[]=$i->menu_id; 
-                   
+                   $menuId[]=$i->menu_id;
+
                 }
                 $menuData = Menu::select('label_photo')->whereIn('id',$menuId)->get();
                 if(!empty($menuData)){
@@ -121,7 +121,7 @@ class OrderController extends Controller
                     return $pdf->download('Label.pdf');
 
                 }
-            }            
+            }
         }
     }
     public function generateOrderPDF($order_id)
@@ -137,10 +137,10 @@ class OrderController extends Controller
                         'currency' => $currency
                     ];
             $pdf = PDF::loadView('frontend.chef-dashboard.order.order-pdf', $pageData);
-            
+
             return $pdf->stream('order.pdf');
-           
-        } 
+
+        }
     }
     public function orderDetail($id)
     {
@@ -155,5 +155,17 @@ class OrderController extends Controller
         $pageData=['orderList'=>$orderList,'deliveryDetail'=>$deliveryDetail,'currency'=>$currency];
         return view('frontend.chef-dashboard.order.order-detail',$pageData);
 
+    }
+     public function checkout()
+    {
+        $countries = Countries::pluck('name', 'id');
+        $pageData = ["title" => Config::get('constants.title.countrylocation_add'),'countries' => $countries];
+        return view('frontend.checkout.checkout-details',$pageData); // create this Blade file
+    }
+
+    public function placeOrder(){
+           Session::forget('cart');
+
+        return redirect()->route('checkout')->with('success', 'Order placed successfully!');
     }
 }

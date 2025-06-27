@@ -16,7 +16,7 @@
                     </div>
                     {{ Form::open(['url' => route('country-location.store'), 'method'=>'POST', 'files'=>true, 'name' => 'frmCountryLocation', 'id' => 'frmCountryLocation']) }}
                     <div class="box-body">
-                        <div class="row"> 
+                        <div class="row">
                             <div class="form-group col-sm-6">
                                 {{ Form::label('country_id','Country Name') }}
                                 {{ Form::select('country_id',!empty($countries) ? $countries : [], old('country_id'),["required","class"=>"select2 form-control ","style"=>"width: 100%","placeholder"=>'-----Select Country------',"id"=>"country_id","name"=>"country_id"]) }}
@@ -31,7 +31,7 @@
                             <!--     <input type="hidden" name="zipcode" id="zipcode"> -->
                             </div>
                         </div>
-                        <div class="row"> 
+                        <div class="row">
                             <div class="form-group col-sm-6">
                                 <label>State</label>
                                 <input type="text" name="state" id="state" class="form-control" readonly>

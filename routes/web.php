@@ -27,6 +27,11 @@ Route::get('/', function () {
 });
 /* Web Route */
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function() {
+    Route::get('/checkout','OrderController@checkout')->name('checkout');
+    Route::post('/checkout','OrderController@placeOrder')->name('place-order');
+    Route::post('/update-cart', 'OrderController@update')->name('update-cart');
+    Route::post('/remove-from-cart', 'OrderController@remove')->name('remove-from-cart');
+
     Route::get('/', 'WebController@index')->name('home');
     Route::post('/cookie', 'WebController@setCookie');
     Route::post('save-location', 'WebController@saveLocation')->name('save-location');
