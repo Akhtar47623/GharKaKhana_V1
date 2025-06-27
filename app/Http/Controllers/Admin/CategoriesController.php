@@ -37,9 +37,9 @@ class CategoriesController extends Controller
                         ->leftjoin('countries', 'categories.country_id', 'countries.id')
                         ->leftjoin('states', 'categories.state_id', 'states.id');
         if(auth('admin')->user()->role_id==1 || auth('admin')->user()->role_id==2){
-            $categoryData=$categoryData->get();
+            $categoryData=$categoryData->orderBy('id','desc')->get();
         }else{
-            $categoryData=$categoryData->where('user_id',auth('admin')->user()->id)->get();
+            $categoryData=$categoryData->where('user_id',auth('admin')->user()->id)->orderBy('id','desc')->get();
         }
         $pageData = ['title' => Config::get('constants.title.categories'),'categoryData'=>$categoryData];
         return view('admin.category.index', $pageData);
