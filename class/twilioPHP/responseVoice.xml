@@ -1,0 +1,9 @@
+<Response>
+<Say voice="alice">
+Thank you for calling Avanti Stone.
+</Say>
+<Pause length="1"/>
+<Say voice="alice">
+Please hang up and call us back at 7139969100 to speak to someone.
+</Say>
+</Response>

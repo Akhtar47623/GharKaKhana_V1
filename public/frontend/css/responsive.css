@@ -1,0 +1,398 @@
+@media (max-width: 1600px){
+    .welcome-sec:after{background-size: cover;background-position: center center;}
+    .get-started-sec:after{background-size: cover;}
+}
+
+@media (max-width: 1500px){
+    .search-result-left {width: 20%;}
+    .search-result-right {width: 80%;}
+
+}
+@media (max-width: 1300px){
+    .site-header {padding: 29px 15px 29px 15px;}
+    .header-menu {padding: 0 0 0 20px;width: auto;}
+    .enumenu_ul ul li{margin: 0 0 0 20px;}
+    .enumenu_ul ul li:first-child{margin: 0;}
+    .header-location .landing-form .form-main input#location{width: 250px;}
+    .banner-content {padding: 70px 50px 70px 50px;}
+    .banner-content h1 {font-size: 60px;line-height: 70px;margin: 0 0 25px 0;}
+    .banner-content p br{display: none;}
+    .banner-content p{font-size: 16px;line-height: 26px;}
+    .banner-content a{font-size: 18px;line-height: 22px;padding: 14px 30px 12px 30px;}
+    .food-categories-sec {padding: 60px 0 60px 0;}
+    .food-categories-heading h2 {font-size: 65px;line-height: 70px;}
+    .oriental-taste-right {width: 48%;}
+    .oriental-taste-content {padding: 30px 20px 0 0;}
+    .search-result-right .search-result-list {width: 50%;}
+    .header-search-wrap{right: 0;left: auto;}
+    body .ui-autocomplete {right: 410px !important;}
+
+}
+
+@media (max-width: 1200px){
+    .discover-step-sec ul{margin: 0 -15px;padding: 0 0 0 0;}
+    .discover-step-sec ul li{padding: 0 15px;}
+    .discover-step-sec ul li:before{bottom: -2px;}
+    .discover-step-sec ul li:nth-child(2):before{top: -2px;}
+    .discover-step-circle a {width: 225px;height: 225px;}
+    .social-login{margin: 0;}
+    .social-login li{width: 100%;padding: 0 0 20px 0;}
+    .login-right {padding: 60px 20px 20px 20px;}
+    .search-result-list{width: 100%;}
+    .page-link-btn a{display: block;text-align: center;margin: 0 0 15px 0;width: 100%;}
+    .search-result-sec {padding: 40px 15px 30px 15px;}
+    .checkout-sec .container {padding-left: 15px;padding-right: 15px;}
+    .checkout-center {width: 30%;padding: 0 30px;}
+    .user-profile-sec .container {padding-left: 15px;padding-right: 15px;}
+    .edit-profile-sec .container{padding-left: 15px;padding-right: 15px;}
+
+    .get-started-sec:before{background-position: center top;}
+    .logo {max-width: 290px;}
+}
+@media (max-width: 1024px){
+    .enumenu_ul{position: absolute;left: 0;right: 0;top: 100%;background-color: #ffffff;border-top: 1px solid #efb313;box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);height: 100vh;z-index: 1;}
+    .header-location-wrap .header-location{display: none;}
+    .header-location-wrap-mob {padding: 20px 15px;}
+    .header-location.mobile{display: block;}
+    .menu-icon {display: inline-block;width: 25px;height: 20px;position: relative;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;cursor: pointer;vertical-align: middle;}
+    .menu-icon span {display: block;position: absolute;height: 3px;width: 100%;background: #efb313;border-radius: 9px;opacity: 1;left: 0;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}
+    .menu-icon span:nth-child(1) {top: 0px;}
+    .menu-icon span:nth-child(2) {top: 8px;}
+    .menu-icon span:nth-child(3) {top: 16px;}
+    .menu-icon.active span:nth-child(1) {top: 8px;-webkit-transform: rotate(135deg);-moz-transform: rotate(135deg);-o-transform: rotate(135deg);transform: rotate(135deg);}
+    .menu-icon.active span:nth-child(2) {opacity: 0;left: -60px;}
+    .menu-icon.active span:nth-child(3) {top: 8px;-webkit-transform: rotate(-135deg);-moz-transform: rotate(-135deg);-o-transform: rotate(-135deg);transform: rotate(-135deg);}
+    .enumenu_ul ul li{width: 100%;display: block;margin: 0;}
+    .enumenu_ul ul li a{padding: 10px 15px;display: block;border-bottom: 1px solid #efb313;}
+    .enumenu_ul ul li:last-child{padding: 0;}
+    .enumenu_ul ul li:last-child a{padding-left: 40px;}
+    .sbSelector a:before{left: 15px;top: 9px;}
+    .enumenu_ul ul.sbOptions{position: static;width: 100% !important;}
+    .header-location .landing-form .form-main input#location {width: 100%;}
+    .arrow{position: absolute;width: 100%;height: 15px;right: 20px;top: 11px;z-index: 1;}
+    .arrow:before{position: absolute;content: "";width: 2px;right: 7px;top: 0;bottom: 0;background-color: #efb313;margin: auto;transition: all 0.5s ease-in-out 0s;-moz-transition: all 0.5s ease-in-out 0s;-ms-transition: all 0.5s ease-in-out 0s;-o-transition: all 0.5s ease-in-out 0s;-webkit-transition: all 0.5s ease-in-out 0s;}
+    .arrow:after{position: absolute;content: "";width:16px;height: 2px;right: 0;top: 0;bottom: 0;background-color: #efb313;margin: auto;}
+    .enumenu_ul ul li.has-children .sb-menu{position: static;width: 100%;transition: none;opacity: 1;visibility: visible;box-shadow: none;}
+    .enumenu_ul ul li.has-children .sb-menu li:last-child{padding: 0;}
+    .enumenu_ul ul li.has-children .sb-menu li a{padding: 10px 20px;font-size: 14px;line-height: 18px;}
+    .enumenu_ul ul li.has-children .sb-menu li:last-child a{border-bottom: 1px solid #efb313;}
+    .arrow.up:before{transform: rotate(-90deg);}
+    
+    .header-search-wrap {width: 100%;right: 0;top: 103%;padding: 10px;opacity: 1;visibility: visible;}
+    .header-search-wrap input{font-size: 14px;line-height: 18px;padding: 8px 50px 8px 10px;}
+    .header-search-wrap button{width: 36px;height: 36px;right: 10px;top: 10px;}
+    .header-search-wrap button img {width: 18px;}
+    .chef-profile-sec {padding: 20px 15px 0px 15px;}
+    .chef-profile-left {width: 35%;} 
+    .chef-profile-right {width: 65%;padding: 0 0 0 30px;}
+    .search-result-left {width: 30%;}
+    .search-result-right {width: 70%;}
+    body .ui-autocomplete {position: fixed;right: auto !important;width: 100% !important;left: 0;}
+
+    .four-box-sec {padding: 20px 0 30px 0;}
+    .header-search {position: static;}
+    .banner-sec {margin: 90px 0 0 0;}
+    .landing-form .form-wrap {padding: 0 0;}
+}
+
+@media (max-width: 991px){
+    p {font-size: 16px;line-height: 26px;}
+    .banner-content {padding: 70px 50px 70px 20px;}
+    .banner-content {padding: 70px 50px 70px 20px;}
+    .categories-list {padding: 0 15px 50px;}
+    .categories-list-wrap {margin: 0 -15px -50px;padding: 30px 0 0 0;}
+    .categories-img {max-width: 180px;padding-top: 180px;}
+    .categories-content h4 {font-size: 22px;line-height: 30px;margin: 0 0 8px 0;}
+    .categories-content p {line-height: 22px;font-size: 16px;}
+    .top-chef-left {width: 50%;}
+    .top-chef-right {width: 48%;padding: 32px 0 0 2px;}
+    .top-chef-content h3 {font-size: 80px;line-height: 100px;margin: 0 0 30px 0;}
+    .top-chef-content h5 {font-size: 24px;line-height: 28px;}
+    .top-chef-content p {line-height: 26px;margin: 0 0 10px 0;font-size: 16px;}
+    .top-chef-content a {font-size: 18px;line-height: 22px;padding: 16px 30px 14px 30px;letter-spacing: 0;margin: 30px 0 0 0;}
+    .top-chef-sec:before{top: -20%;height: 20%;}
+    .top-chef-sec{margin: 20% 0 0 0;padding: 0 0 60px 0;}
+    .our-chef-sec {padding: 50px 0 40px 0;}
+    .our-chef-heading h2 {font-size: 90px;line-height: 100px;}
+    .our-chef-list {width: 33.33%;padding: 0 15px 50px;}
+    .our-chef-list-wrap {margin: 0 -15px -50px;padding: 50px 0 0 0;}
+    .our-chef-img {width: 200px;padding-top: 200px;}
+    .our-chef-content h4 {font-size: 24px;line-height: 28px;}
+    .oriental-taste-content {padding: 20px 0 0 0;}
+    .oriental-taste-left {width: 46%;padding: 0 0 0 0;}
+    .oriental-taste-content h2 {font-size: 80px;line-height: 80px;margin: 0 0 10px 0;}
+    .oriental-taste-content p {line-height: 26px;margin: 0 0 30px 0;font-size: 16px;}
+    .oriental-taste-content a {font-size: 20px;line-height: 24px;padding: 17px 30px 15px 30px;}
+    .oriental-taste-sec:after{display: none;}
+    .discover-heading h2 {font-size: 80px;line-height: 70px;}
+    .discover-heading p{line-height: 26px;font-size: 16px;}
+    .discover-heading p br{display: none;}
+    .discover-step-sec ul li:before{display: none;}
+    .discover-step-sec ul{margin: 0 -15px -30px;}
+    .discover-step-sec ul li {width: 50%;padding: 0 15px 30px;}
+    .discover-step-sec {padding: 40px 0 0 0;}
+    .oriental-taste-sec:before{height: 10%;bottom: -10%;}
+    .oriental-taste-sec{padding: 50px 0 36px 0;}
+    .footer-right {width: 65%;}
+    .footer-menu ul li a {font-size: 16px;line-height: 20px;}
+    .banner-content h1 {font-size: 56px;line-height: 64px;margin: 0 0 20px 0;}
+    .login-right-wrap .login-title h1{font-size: 55px;line-height: 60px;margin: 0 0 15px 0;}
+    .form-content-remember{width: 100%;margin: 0 0 15px 0;}
+    .registration-sec .form-main ul li{width: 100%;}
+    .chef-description ul li{width: 100%;}
+    .search-result-right .search-result-list {width: 100%;}
+    .clear-filter {text-align: right;}
+    .clear-filter span{padding: 0;}
+    
+
+    /******** Registration Info Section CSS Start *************/
+    .welcome-sec:before{display: none;}
+    .welcome-left {width: 100%;padding: 0 0 30px 0;}
+    .welcome-right {width: 100%;text-align: center;}
+    .welcome-right img {max-width: 400px;width: 100%;}
+    .welcome-content h1 {font-size: 36px;line-height: 44px;margin: 0 0 20px 0;}
+    .welcome-content h6 {font-size: 16px;line-height: 26px;margin: 0 0 20px 0;}
+    .welcome-wrap {padding: 30px 15px 110px 15px;}
+    .four-box-list-wrap{margin: 0 -15px -30px;}
+    .four-box-list {width: 50%;padding: 0 15px 30px;}
+    .benefits-heading h2 {font-size: 54px;line-height: 62px;}
+    .benefits-list ul li:before{display: none;}
+    .benefits-heading {padding: 0 0 50px 0;}
+    .benefits-list ul{flex-wrap: wrap;margin: 0 -15px -30px;}
+    .benefits-list ul li{width: 50%;padding: 0 15px 30px;}
+    .benefits-icon img {max-width: 55px;}
+    .get-started-sec:before{display: none;}
+    .get-started-sec:after {top: -68px;height: 70px;}
+    .get-started-sec {padding: 0 0 40px 0;}
+    .get-started-heading h2 {font-size: 54px;line-height: 62px;margin: 0 0 20px 0;}
+    .get-started-heading:before {width: 57px;height: 63px;background-size: contain;}
+    .get-started-heading h4 {font-size: 20px;line-height: 26px;}
+    .get-started-content h5 {font-size: 22px;line-height: 32px;margin: 0 0 15px 0;}
+    .get-started-icon {min-height: 60px;}
+    .get-started-icon img {max-width: 70px;}
+    .get-started-content {padding: 20px 0 0 0;}
+    .get-started-box {padding: 20px 10px 40px 10px;}
+    .get-started-box:before {width: 50px;height: 50px;background-size: contain;bottom: -25px;}
+    .more-info-sec {padding: 80px 0 0 0;}
+    .more-info-sec h5 {font-size: 24px;line-height: 30px;}
+    .more-info-sec a {font-size: 18px;line-height: 22px;padding: 12px 25px 12px;}
+    .benefits-sec {padding: 20px 0 120px 0;}
+    /******** Registration Info Section CSS End *************/
+}
+
+@media (max-width: 767px){
+    .banner-img {width: 100%;padding-top: 350px;}
+    .banner-content {padding: 20px 20px 40px 20px;width: 100%;text-align: center;}
+    .categories-list {width: 50%;}
+    .food-categories-heading p br{display: none;}
+    .our-chef-list{width: 50%;}
+    .footer-left {width: 100%;}
+    .footer-right {width: 100%;padding: 40px 0 0 0;}
+    .footer-main {padding: 30px 0 20px 0;}
+    .login-left {width: 100%;position: static;padding-top: 300px;display: none;}
+    .login-wrap{min-height: inherit;}
+    .login-right{width: 100%;padding: 20px 15px 0 15px;height: 100vh;overflow: auto;}
+    .contact-form .login-right {width: 100%;padding: 20px 15px 60px 15px;height: auto;overflow: hidden;}
+    .login-logo{position: static;padding: 0 0 15px 0;}
+    .form-main label{font-size: 14px;line-height: 18px;}
+    .form-content-remember span, .form-content a {font-size: 14px;}
+    .register-link p {font-size: 14px;line-height: 18px;}
+    .form-main ul li .register-link p a {font-size: 16px;line-height: 20px;}
+    .social-login h3 span {font-size: 18px;line-height: 22px;}
+    .social-login li a {font-size: 14px;line-height: 16px;padding: 12px 10px;}
+    .form-main button {font-size: 16px;line-height: 20px;padding: 12px 30px;}
+    .login-right-wrap{max-width: 100%;}
+    .form-wrap.chef-register-option {justify-content: space-between;}
+    .form-wrap .checkbox-tools:checked + label, .form-wrap .checkbox-tools:not(:checked) + label{margin: 0 0 10px 0;width: 23%;padding: 10px 10px;}
+    .site-loader{display: none;}
+    .mob-chef-profile-btn{display: none;}
+    .chef-profile-left {width: 100%;padding: 0 0 30px 0;}
+    .chef-profile-right {width: 100%;padding: 0 0 0 0;}
+    .mob-chef-profile-btn{display: block;color: #ffc200;background-color: #303030;border-radius: 6px;padding: 10px;font-weight: 600;font-size: 16px;line-height: 20px;position: relative;}
+
+    .mob-chef-profile-btn:before{position: absolute;content: "\f067";font-family: 'Font Awesome 5 Free';right: 15px;top: 0;line-height: 40px;}
+    .mob-chef-profile-btn.active:before{content: "\f068";}
+    .chef-profile-sidebar{margin: 20px 0 0 0;height: auto;}
+    .chef-search-menu ul{display: none;}
+    .chef-search-menu h2.resp-accordion{display: block;color: #ffc200;background-color: #303030 !important;border-radius: 6px;padding: 10px;font-weight: 600;font-size: 16px;line-height: 20px;position: relative;margin: 0 0 15px 0;}
+    .chef-search-menu h2.resp-accordion:before{position: absolute;content: "\f067";font-family: 'Font Awesome 5 Free';right: 15px;top: 0;line-height: 40px;}
+    .chef-search-menu h2.resp-accordion.resp-tab-active:before{content: "\f068";}
+    .resp-tab-content{padding: 0 15px 15px;}
+    .popup-product-img{pointer-events: none;}
+    .search-result-top h4{width: 100%;padding: 0 0 20px 0;}
+    .search-result-top h4 {font-size: 18px;line-height: 22px;}
+    .search-top-right h5{font-size: 16px;line-height: 20px;margin: 20px 0 10px 0;width: 100%;}
+    .search-result-top select {font-size: 14px;line-height: 18px;padding: 5px 10px 5px 10px;background-size: 9px;}
+    .checkout-right {width: 100%;}
+    .checkout-center {width: 100%;padding: 0 30px;}
+    .checkout-left {width: 100%;padding: 30px 0 0 0;}
+    .mini-cart-top {background-color: #f5f5f5;padding: 20px 20px;}
+    .cart-items table {width: 100%;}
+    .mini-cart-bottom{padding: 10px 10px;}
+    .mini-cart-bottom-left h4, .mini-cart-bottom-right span {font-size: 14px;line-height: 20px;}
+    .mini-cart-bottom-left a {width: 26px;height: 26px;margin: 0 10px 0 0;}
+    .search-result-mob:before {position: absolute;content: "\f067";font-family: 'Font Awesome 5 Free';right: 15px;top: 0;line-height: 40px;}
+    .search-result-mob.active:before {content: "\f068";}
+    .search-result-mob {display: block;color: #ffc200;background-color: #303030;border-radius: 6px;padding: 10px;font-weight: 600;font-size: 16px;line-height: 20px;position: relative;margin: 0 0 20px 0;}
+    .search-result-mob-wrap{display: none;}
+    .cart-items table thead tr th:nth-child(1){display: none;}
+    .cart-items table thead tr th:nth-child(3){display: none;}
+    .cart-items table thead tr th:nth-child(5){display: none;}
+    .cart-items table tbody tr td:nth-child(1){display: none;}
+    .cart-items table tbody tr td:nth-child(3){display: none;}
+    .cart-items table tbody tr td:nth-child(5){display: none;}
+    span.price {font-size: 16px;line-height: 18px;white-space: nowrap;}
+    .cart-item-qty select {width: 35px;font-size: 14px;line-height: 16px;padding: 4px;background-size: 7px;}
+    .cart-items table tbody tr:last-child td:nth-child(1) {display: block;padding: 0;text-align: left;}
+    .mini-cart-btn a {font-size: 13px;line-height: 16px;padding: 5px 7px 5px 7px;margin: 0 5px 10px 0;}
+    .cart-items table thead tr th {font-size: 13px;line-height: 16px;}
+    .cat-name.mob{display: block;width: 100%;}
+    .distance-val.mob{display: block;}
+    .cat-name.desk{display: none;}
+    .distance-val.desk{display: none;}
+    .search-result-img-left {text-align: center;width: 100%;}
+    .search-result-img{margin: 0 auto;}
+    .edit-profile-tab .resp-tabs-list{display: none;}
+    .edit-profile-tab .resp-tabs-container {width: 100%;}
+    .edit-profile-tab h2.resp-accordion{display: block;color: #303030;background-color: #ffc200;border-radius: 6px;padding: 10px;font-weight: 600;font-size: 16px;line-height: 20px;position: relative;margin: 0 0 15px 0;}
+    .edit-profile-tab .resp-tab-content{padding: 0;}
+    .edit-profile-form {padding: 20px 0 0 0;}
+    .edit-profile-tab h2.resp-accordion.resp-tab-active:before {content: "\f068";}
+    .edit-profile-tab h2.resp-accordion:before {position: absolute;content: "\f067";font-family: 'Font Awesome 5 Free';right: 15px;top: 0;line-height: 40px;}
+    .edit-profile-sec {padding: 20px 0 30px 0;}
+    .footer-main .container {padding-left: 15px;padding-right: 15px;}
+
+    /******** Registration Info Section CSS Start *************/
+    .welcome-content h1 {font-size: 28px;line-height: 34px;margin: 0 0 15px 0;}
+    .welcome-content h6 {font-size: 14px;line-height: 24px;margin: 0 0 15px 0;}
+    .welcome-content p {font-size: 13px;line-height: 21px;}
+    .welcome-sec:after {background-size: cover;background-position: center center;width: auto;right: 0;height: 70px;}
+    .get-started-sec:after {top: -58px;height: 60px;}
+    .get-started-list {width: 50%;padding: 0 15px 50px;}
+    .get-started-list-wrap{justify-content: center;margin: 0 -15px -50px;}
+    .more-info-sec h5 {font-size: 20px;line-height: 26px;}
+    .more-info-sec a {font-size: 16px;line-height: 20px;padding: 10px 15px 10px;}
+    /******** Registration Info Section CSS End *************/
+
+    .video-wrap {display: none;}
+    .banner-slider .slick-slide:nth-child(4){display: none;}
+    .advertise-wrap {max-width: 100%;justify-content: center;padding: 0 15px;}
+    .advertise-left {padding: 0 30px 0 0;}
+    .advertise-sec {padding: 30px 0 30px;}
+    .popular-sec .search-result-content {width: calc(100% - 90px);padding: 0 0 0 20px;}
+    .popular-sec .search-result-img-left{width: auto;}
+    
+    
+}
+
+@media (max-width: 640px){
+    p {font-size: 14px;line-height: 24px;}
+    .banner-content p {font-size: 14px;line-height: 24px;margin: 0 0 20px 0;}
+    .banner-content a {font-size: 16px;line-height: 20px;padding: 12px 20px 10px 20px;}
+    .food-categories-heading h2 {font-size: 50px;line-height: 65px;margin: 0 0 15px 0;}
+    .top-chef-sec:before{display: none;}
+    .food-categories-sec {padding: 30px 0 30px 0;}
+    .top-chef-sec{margin: 0;padding: 30px 0 30px 0;}
+    .top-chef-content {padding: 20px 0 0 0;text-align: center;}
+    .top-chef-left {width: 100%;order: 2;}
+    .top-chef-right {width: 100%;padding: 0 0 0 0;text-align: center;}
+    .top-chef-img {max-width: 290px;margin: 0 auto;padding-top: 290px;}
+    .top-chef-content h3 {font-size: 58px;line-height: 70px;margin: 0 0 20px 0;}
+    .top-chef-content h5 {font-size: 22px;line-height: 26px;margin: 0 0 10px 0;}
+    .top-chef-content p {line-height: 24px;margin: 0 0 10px 0;font-size: 14px;}
+    .top-chef-content span {font-size: 16px;line-height: 20px;margin: 0 0 16px 0;}
+    .top-chef-content a {font-size: 16px;line-height: 20px;padding: 12px 20px 11px 20px;margin: 20px 0 0 0;}
+    .our-chef-heading h2 {font-size: 60px;line-height: 80px;}
+    .discover-step-circle a {width: 210px;height: 210px;}
+    .oriental-taste-left {width: 100%;padding: 0 0 0 0;text-align: center;}
+    .oriental-taste-sec:before{display: none;}
+    .oriental-taste-img{max-width: 70%;margin: 0 auto;}
+    .oriental-taste-right {width: 100%;}
+    .oriental-taste-content h2 {font-size: 60px;line-height: 64px;margin: 0 0 10px 0;}
+    .oriental-taste-content p {line-height: 24px;margin: 0 0 20px 0;font-size: 14px;}
+    .oriental-taste-content a {font-size: 18px;line-height: 20px;padding: 14px 20px 13px 20px;}
+    .oriental-taste-content {text-align: center;}
+    .discover-sec {padding: 40px 0 0 0;}
+    .discover-heading h2 {font-size: 64px;line-height: 70px;}
+    .discover-heading p {line-height: 24px;font-size: 14px;}
+    .footer-info h3 {font-size: 20px;line-height: 24px;margin: 0 0 10px 0;}
+    .footer-info {text-align: center;}
+    .footer-social ul {justify-content: center;}
+    .footer-social {padding: 20px 0 0 0;}
+    .footer-menu h6 {font-size: 20px;line-height: 24px;margin: 0 0 15px 0;}
+    .footer-menu ul li {padding: 0 0 10px 0;}
+    .footer-menu ~ .footer-menu{padding: 20px 0 0;}
+    .top-chef-content img {display: block;margin: 0 auto;}
+    .logo {max-width: 190px;}
+    .search-result-left {width: 100%;}
+    .search-result-right {width: 100%;padding: 30px 0 0 0;}
+    .cat-name, .distance-val span{text-align: left;}
+    .search-result-sec {padding: 10px 15px 10px 15px;}
+    .cart-items-top-wrap span {display: block;width: 100%;padding: 5px 0 5px 0;font-size: 14px;line-height: 18px;}
+    .user-profile-left {width: 100%;}
+    .user-profile-right {width: 100%;padding: 30px 0 0 0;}
+    .user-profile-img {padding-top: 200px;width: 200px;}
+    .user-profile-info ul li {width: 100%;padding: 0 10px 15px;}
+    .user-profile-info ul li span {font-size: 14px;line-height: 20px;}
+    .user-profile-info ul li h6 {font-size: 14px;line-height: 22px;}
+    .edit-profile-btn a {font-size: 14px;line-height: 18px;padding: 10px 15px 10px 15px;margin: 0 0 0 0;}
+    .user-profile-sec {padding: 30px 0 40px;}
+    .footer-top{justify-content: center;}
+    .contact-form .form-main ul li.half-li {width: 100%;}
+
+
+    /******** Registration Info Section CSS Start *************/
+    .four-box-list {width: 100%;}
+    .four-box-icon img {max-width: 60px;}
+    .four-box-main {padding: 20px 10px 20px 10px;}
+    .four-box-icon {min-height: auto;margin: 0 0 15px 0;}
+    .four-box-icon img {max-width: 60px;}
+    /******** Registration Info Section CSS End *************/
+}
+
+
+/******** Registration Info Section CSS End *************/
+@media (max-width: 550px){
+    .welcome-sec:after {height: 40px;}
+    .welcome-wrap {padding: 30px 15px 70px 15px;}
+    .benefits-list ul li {width: 100%;}
+    .benefits-list ul li h6 {font-size: 16px;line-height: 21px;}
+    .benefits-icon img {max-width: 40px;}
+    .benefits-heading h2 {font-size: 42px;line-height: 48px;}
+    .benefits-heading {padding: 0 0 30px 0;}
+    .get-started-sec:after {top: -38px;height: 40px;}
+    .get-started-list {width: 100%;}
+    .get-started-icon {min-height: auto;}
+    .get-started-content h5 {font-size: 18px;line-height: 24px;margin: 0 0 10px 0;}
+    .get-started-heading h2 {font-size: 42px;line-height: 48px;margin: 0 0 20px 0;}
+    .get-started-heading h4 {font-size: 16px;line-height: 22px;}
+    .get-started-heading {padding: 84px 0 30px 0;}
+    .benefits-sec {padding: 20px 0 80px 0;}
+
+}
+/******** Registration Info Section CSS End *************/
+
+
+@media (max-width: 480px){
+    .categories-list {width: 100%;}
+    .categories-list-wrap {margin: 0 -15px -30px;}
+    .categories-list {padding: 0 15px 30px;}
+    .our-chef-list-wrap {margin: 0 -15px -30px;padding: 30px 0 0 0;}
+    .our-chef-list {width: 100%;padding: 0 15px 30px;}
+    .discover-step-sec ul li{width: 100%;}
+    .discover-step-content h4 {font-size: 30px;line-height: 36px;margin: 10px 0 4px 0;}
+    .discover-step-content span {font-size: 20px;line-height: 24px;}
+    .footer-menu {width: 100%;text-align: center;}
+    .form-wrap .checkbox-tools:checked + label, .form-wrap .checkbox-tools:not(:checked) + label{width: 48%;}
+    .search-result-content {width: 100%;padding: 10px 0 0 0;}
+    .search-result-img {width: 90px;padding-top: 90px;}
+    .product-counter{order: 1;}
+    .addto-cart-btn{order: 3;width: 100%;padding: 20px 0 0 0;text-align: center;}
+    .cart-total{order: 2;}
+    .edit-profile-form.form-main ul li {width: 100%;padding: 0 15px 20px;}
+    .edit-profile-form.form-main button {margin: 0 auto;}
+    .footer-select {width: 100%;text-align: center;margin: 0 0 15px 0;}
+    .footer-select .sbSelector a {width: 100%;}
+    .footer-top{padding: 0 0 10px 0;}
+    
+}

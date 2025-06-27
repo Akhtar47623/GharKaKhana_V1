@@ -1,0 +1,95 @@
+.switch {  
+	position: relative;  display: inline-block;  width: 60px;  height: 34px;
+}
+
+.switch input {   
+	opacity: 0;  width: 0;  height: 0;
+}
+
+.slider {  
+	position: absolute;  cursor: pointer;  top: 0;  left: 0;  right: 0;  bottom: 0;
+  background-color: #ccc;  -webkit-transition: .4s;  transition: .4s;
+}
+
+.slider:before {  
+	position: absolute;  content: "";  height: 26px;  width: 26px;
+  left: 4px;  bottom: 4px;  background-color: white;  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {  
+	background-color: #2196F3;
+}
+
+input:focus + .slider {  
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {  
+	-webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px); 
+   transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {  
+	border-radius: 34px;
+}
+
+.slider.round:before {  
+	border-radius: 50%;
+}
+
+
+/* Image Display and Delete */
+.profile-pic {position: relative;display: inline-block;}
+.profile-pic:hover .edit { display: block;}
+/*.edit {padding-top: 7px;padding-right: 7px;position: absolute;right: 0;top: 0;
+    display: none;}
+.edit a {color: red;}*/
+
+.seen_sms .label-warning {
+    right: 4px;
+    top: 4px;
+    position: absolute;
+    padding: 2px 3px;
+}
+
+.seen_sms {
+    position: relative;
+}
+.user-order-list-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+.user-order-list-bottom ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px  0 0;
+    position: relative;
+}
+.user-order-list-bottom ul:before{position: absolute;content: "";left: 47px;right: 65px;top: 10px;height: 2px;background-color: #dddddd;}
+.user-order-list-bottom ul li{
+    position: relative;
+    text-align: center;
+}
+.user-order-list-bottom ul li:before{position: absolute;content: "";width: 14px;height: 14px;background-color: #dddddd;border-radius: 50%;left: -10px;right: 0;top: -16px;margin: auto;}
+.user-order-list-bottom ul li:after{position: absolute;content: "";}
+.user-order-list-bottom ul li.active:before{background-color: #ffc200;position: absolute;content: "";width: 14px;height: 14px;border-radius: 50%;left: 48px;right: 0;top: -16px;margin: inherit;}
+.user-order-list-tab .resp-tabs-list{
+    padding: 0 0 30px 0;
+}
+.user-order-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.complete-order .user-order-list {
+    width: 100%;
+    border-right: 0;
+}
