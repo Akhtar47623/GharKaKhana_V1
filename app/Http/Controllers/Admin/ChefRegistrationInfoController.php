@@ -50,7 +50,7 @@ class ChefRegistrationInfoController extends Controller
     public function create()
     {
 
-        $countries = Countries::whereIn('id', [30,101,231,38,142])->pluck('name', 'id');
+        $countries = Countries::whereIn('id', [30,101,231,38,142,166])->pluck('name', 'id');
         $pageData = ["title" => Config::get('constants.title.chef_reg_info_add'),'countries'=>$countries];
         return view('admin.chef-regi-info.create', $pageData);
     }
@@ -95,7 +95,7 @@ class ChefRegistrationInfoController extends Controller
             Helper::myLog($exception);
             Toastr::error(Config::get('constants.message.oops'), 'Error');
             return response()->json(['status' => 500, 'message' => 'This information has not been saved!']);
-        }  
+        }
     }
 
     /**
@@ -121,9 +121,9 @@ class ChefRegistrationInfoController extends Controller
         $chefRegInfo =ChefRegistrationInfo::where('id', $id)->first();
         $countries = Countries::whereIn('id', [30,101,231,38,142])->pluck('name', 'id');
         $states = States::where('country_id',$chefRegInfo->country_id)->pluck('name','id');
-        
+
         $pageData = [
-            "title" => Config::get('constants.title.category_edit'), 
+            "title" => Config::get('constants.title.category_edit'),
             'chefRegInfo' => $chefRegInfo,
             'countries' => $countries,
             'states' => $states
@@ -143,7 +143,7 @@ class ChefRegistrationInfoController extends Controller
         DB::beginTransaction();
         Helper::myLog('Chef Registration Info update : start');
         try {
-            
+
             $country_id = $request->country_id;
             $state_id = $request->state_id;
             $desc=$request->summary_ckeditor;
@@ -151,8 +151,8 @@ class ChefRegistrationInfoController extends Controller
             $checkName = ChefRegistrationInfo::where('country_id',$country_id)
                         ->where('state_id',$state_id)
                         ->where('user_type',$usertype)
-                        ->where('id', '!=', $id)->count();           
-                       
+                        ->where('id', '!=', $id)->count();
+
             if ($checkName > 0) {
                 Helper::myLog('Chef Registration Info update : Infromation is exists');
                 return response()->json(['status' => 409, 'message' => 'Infromation is already exists!']);
@@ -161,9 +161,9 @@ class ChefRegistrationInfoController extends Controller
                     'country_id' => $country_id,
                     'state_id' => $state_id,
                     'user_type'=>$usertype,
-                    'description'=>$desc                    
+                    'description'=>$desc
                 ];
-                
+
                 ChefRegistrationInfo::where('id', $id)->update($updateData);
                 DB::commit();
                 Helper::myLog('Chef Registration Info update : finish');
@@ -217,5 +217,5 @@ class ChefRegistrationInfoController extends Controller
             return \Response::json(['status' => Config::get('constants.status.fail'), 'msg' => $exc->getMessage()]);
         }
     }
-    
+
 }
