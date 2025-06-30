@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Frontend\CheckoutController;
 
 
 Route::get('locale/{locale}', function ($locale){
@@ -27,8 +28,9 @@ Route::get('/', function () {
 });
 /* Web Route */
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function() {
-    Route::get('/checkout','OrderController@checkout')->name('checkout');
-    Route::post('/checkout','OrderController@placeOrder')->name('place-order');
+    Route::post('/checkout','CheckoutController@placeOrder')->name('place-order');
+    Route::post('prepare-order','CheckoutController@prepareOrder')->name('order.prepare');
+    Route::get('/checkout','CheckoutController@checkout')->name('checkout');
     Route::post('/update-cart', 'OrderController@update')->name('update-cart');
     Route::post('/remove-from-cart', 'OrderController@remove')->name('remove-from-cart');
 
@@ -99,6 +101,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function() {
 
     Route::group(['middleware' => 'front'], function() {
 
+        // User Order
+
         Route::post('save-delivery-address','ChefController@saveDeliveryAddress')->name('save-delivery-address');
 
         //Chef profile to message
@@ -135,7 +139,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function() {
         Route::get('cash-on-delivery', 'StripePaymentController@codSuccess');
         Route::get('stripe', 'StripePaymentController@stripe')->name('stripe.create');
         Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
-        Route::post('cash', 'StripePaymentController@cashOnDelivery')->name('cash.post');
+        Route::get('cash', 'StripePaymentController@cashOnDelivery')->name('cash.post');
         Route::get('invoice/{order_id}','StripePaymentController@invoice');
         Route::post('invoice','StripePaymentController@storeInvoice')->name('invoice.store');
 

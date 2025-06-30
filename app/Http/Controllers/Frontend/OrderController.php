@@ -156,16 +156,4 @@ class OrderController extends Controller
         return view('frontend.chef-dashboard.order.order-detail',$pageData);
 
     }
-     public function checkout()
-    {
-        $countries = Countries::pluck('name', 'id');
-        $pageData = ["title" => Config::get('constants.title.countrylocation_add'),'countries' => $countries];
-        return view('frontend.checkout.checkout-details',$pageData); // create this Blade file
-    }
-
-    public function placeOrder(){
-           Session::forget('cart');
-
-        return redirect()->route('checkout')->with('success', 'Order placed successfully!');
-    }
 }

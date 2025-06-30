@@ -13,7 +13,7 @@
         @endif
 
         @if(session('cart'))
-        <form action="{{ route('place-order') }}" method="POST">
+        <form action="{{ route('order.prepare') }}" method="POST">
             @csrf
             <div class="row gx-5">
                 <!-- Left: Shipping Information -->
@@ -108,7 +108,7 @@
                             <input type="radio" class="btn-check" name="payment_method" id="payment_card" value="card" autocomplete="off">
                             <label class="btn btn-outline-dark text-start py-3 w-100" for="payment_card">💳 Credit / Debit Card</label>
                         </div>
-                        <button class="btn mt-4" style="background-color:rgb(239 179 19); color:white;">Place Order</button>
+                        <button class="btn mt-4" type="submit" style="background-color:rgb(239 179 19); color:white;">Place Order</button>
                     </div>
                 </div>
             </div>
