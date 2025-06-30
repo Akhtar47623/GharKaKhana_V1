@@ -31,9 +31,26 @@ $location = new \App\Model\Helper();
 </div>
 <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.min.js')}}"></script>
 
+
+<script>
+    function initializeAutocomplete() {
+        // Inject home.js AFTER Google Maps is loaded
+        const script = document.createElement('script');
+        script.src = "{{ asset('public/frontend/js/pages/home.js') }}";
+        script.onload = function () {
+            if (typeof initLocationScript === 'function') {
+                initLocationScript(); // call the wrapped function
+            } else {
+                console.error("initLocationScript not found in home.js");
+            }
+        };
+        document.body.appendChild(script);
+    }
+</script>
+
 <script
     src="https://maps.googleapis.com/maps/api/js?key={{ config('view.google_api_key') }}&libraries=places&callback=initializeAutocomplete"
     async defer>
 </script>
 
-<script type="text/javascript" src="{{ asset('public/frontend/js/pages/home.js')}}"></script>
+
