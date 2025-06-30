@@ -14,7 +14,7 @@ $schedule = new \App\Model\Schedule;
                             <p>{{__('sentence.coming-soon-desc1') }}</p>
 
                            <p>{{__('sentence.coming-soon-desc2') }}</p>
-                            
+
                             <a href="{{ route('mexico-more-info') }}" title="">{{__('sentence.moreinfo') }}</a>
                         </div>
                     </div>
@@ -25,12 +25,12 @@ $schedule = new \App\Model\Schedule;
                         <div class="banner-content">
                             <h1>{{__('sentence.localf') }}</h1>
                             <p>{{__('sentence.localfdesc') }}</p>
-                            <a href="{{ route('local-fav')}}" title="">{{__('sentence.ordernow') }}</a>
+                            {{-- <a href="{{ route('local-fav')}}" title="">{{__('sentence.ordernow') }}</a> --}}
                         </div>
                     </div>
                 </div>
-            </div>                
-            @else 
+            </div>
+            @else
             <div class="banner-slider">
                 @if($countryId=='142')
                 <div>
@@ -41,7 +41,7 @@ $schedule = new \App\Model\Schedule;
                             <p>{{__('sentence.coming-soon-desc1') }}</p>
 
                            <p>{{__('sentence.coming-soon-desc2') }}</p>
-                            
+
                             <a href="{{ route('mexico-more-info') }}" title="">{{__('sentence.moreinfo') }}</a>
                         </div>
                     </div>
@@ -55,8 +55,8 @@ $schedule = new \App\Model\Schedule;
                             <a href="{{ route('mexico-more-info') }}" title="">{{__('sentence.moreinfo') }}</a>
                         </div>
                     </div>
-                </div>              
-                            
+                </div>
+
                 <div>
                     <div class="banner-wrap">
                         <div class="banner-img" style="background-image: url('{{asset('public/frontend/images/chef-registration-bg-img.jpg')}}');"></div>
@@ -67,24 +67,24 @@ $schedule = new \App\Model\Schedule;
                         </div>
                     </div>
                 </div>
-                 @endif                 
+                 @endif
             </div>
             @endif
         </section>
-        
+
         <section class="popular-sec">
             <div class="container">
-                <div class="popular-wrap">                        
+                <div class="popular-wrap">
                     <div class="popular-heading">
                         <h2>Popular Near You</h2>
-                    </div>                                   
+                    </div>
                     <div class="popular-list-wrap">
                         @if(!$chefData->isEmpty())
                         @foreach ($chefData as $value)
-                        @foreach($value->chefMenu as $m)                        
+                        @foreach($value->chefMenu as $m)
                         <div class="search-result-list">
-                            <div class="search-result-box">                                
-                                <span class="chef-name">{{$value->distance}} Miles</span>                                    
+                            <div class="search-result-box">
+                                <span class="chef-name">{{$value->distance}} Miles</span>
                                 <div class="search-result-img-left">
                                     <a href="{{ route('chef-profile',$value->profile_id) }}">
                                         <div class="search-result-img" style="background-image: url('{{asset('public/frontend/images/menu/'.$m->photo)}}');">
@@ -93,30 +93,30 @@ $schedule = new \App\Model\Schedule;
                                 </div>
                                 <div class="search-result-content">
                                     <a href="{{ route('chef-profile',$value->profile_id) }}">
-                                    <h5>{{$m->item_name}}</h5>  
-                                    </a><br>                                    
+                                    <h5>{{$m->item_name}}</h5>
+                                    </a><br>
                                     <span class="status-info">{{$m->status=='1'?"Available":"Not Available"}}</span>
                                     <span class="status-date">{{$schedule::sch($m->id)}}</span>
                                     @if($value->country_id==142)
                                     @php
-                                    $tax= $m['rate'] * $taxes->service_fee_per /100 + $m['rate']; 
+                                    $tax= $m['rate'] * $taxes->service_fee_per /100 + $m['rate'];
                                     $rate = $tax * $taxes->tax / 100 + $tax;
                                     @endphp
                                     <p class="price"><span class="price-val">{{!empty($currency)?$currency->symbol:''}}{{number_format($rate,2)}}</span></p>
                                     @else
                                     <p class="price"><span class="price-val">{{!empty($currency)?$currency->symbol:''}}{{$m->rate}}</span></p>
                                     @endif
-                                </div>                                
+                                </div>
                             </div>
-                        </div>                    
+                        </div>
                         @endforeach
                         @endforeach
                         @endif
-                    </div>  
+                    </div>
                     <div class="slider-nav"></div>
                     <div class="see-all">
                         <a href="{{url('search/menu/nearby/all')}}" title="">{{__('sentence.view-all')}}</a>
-                    </div>                     
+                    </div>
                 </div>
             </div>
         </section>
@@ -144,7 +144,7 @@ $schedule = new \App\Model\Schedule;
                                     foreach($cuisines as $c){
                                     if (in_array($c->id, $myArray)){
                                     $str=$str.$c->name;$str=$str.', ';
-                                    }}                                    
+                                    }}
                                     @endphp
                                     <span>{{rtrim($str,' ,')}}</span>
                                     <div class="rating">
@@ -171,7 +171,7 @@ $schedule = new \App\Model\Schedule;
             <div class="container">
                 @if(!empty($topChef))
                 <div class="top-chef-wrap">
-                    <div class="top-chef-left">                     
+                    <div class="top-chef-left">
                         <div class="top-chef-content">
                             <h3>{{__('sentence.topchef') }}</h3>
                             <h5>{{$topChef->display_name}}</h5>
@@ -185,7 +185,7 @@ $schedule = new \App\Model\Schedule;
                                     $str=$str.$c->name;
                                     $str=$str.', ';
                                 }
-                            }                                    
+                            }
                             @endphp
                             <span>{{rtrim($str,' ,')}}</span>
                             <div class="rating">
@@ -198,7 +198,7 @@ $schedule = new \App\Model\Schedule;
                             @endfor
                             </div>
                             <a href="{{ route('chef-profile',$topChef->profile_id) }}" title="">{{__('sentence.viewprofile') }}</a>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="top-chef-right">
                         @php $profile = $topChef['profile'] @endphp
@@ -209,14 +209,14 @@ $schedule = new \App\Model\Schedule;
                 @endif
             </div>
         </section>
-        
-       
+
+
         <section class="food-categories-sec">
             <div class="container">
                 <div class="food-categories-wrap">
                     <div class="food-categories-heading">
                         <h2>{{__('sentence.foodcat') }}</h2>
-                    </div>                   
+                    </div>
                     <div class="categories-list-wrap">
                        @if(!$categories->isEmpty())
                        @foreach ($categories as $cat)
@@ -226,14 +226,14 @@ $schedule = new \App\Model\Schedule;
                                     <div class="categories-img" style="background-image: url('{{asset('public/backend/images/category/'.$cat->image)}}');"></div>
                                     <div class="categories-content">
                                         <h4>{{$cat->name}}</h4>
-                                        
+
                                     </div>
                                 </div>
                             </a>
                         </div>
                         @endforeach
                         @endif
-                    </div>   
+                    </div>
                     <div class="all-categories-btn">
                         <a href="{{ route('all-category') }}" title="">{{__('sentence.view-all')}}</a>
                     </div>
@@ -329,11 +329,11 @@ $schedule = new \App\Model\Schedule;
                 </div>
             </div>
         </section>
-        
+
 @endsection
 @section('pagescript')
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) { 
+        document.addEventListener("DOMContentLoaded", function(event) {
             var scrollpos = localStorage.getItem('scrollpos');
             if (scrollpos) window.scrollTo(0, scrollpos);
         });
@@ -342,5 +342,5 @@ $schedule = new \App\Model\Schedule;
             localStorage.setItem('scrollpos', window.scrollY);
         };
     </script>
-    
+
 @endsection

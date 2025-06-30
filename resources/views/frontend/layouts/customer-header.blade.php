@@ -17,21 +17,21 @@
                             <img src="{{asset('public/frontend/images/search-icon.png')}}" alt="">
                         </a>
                         <div class="header-search-wrap">
-                            
+
                             <input type="text" autocomplete="off" id="search" class="form-control input-lg" style="background: url({{asset('public/frontend/images/favicon.ico')}}) no-repeat scroll 12px 11px; padding-left:40px;" placeholder="{{__('sentence.search') }}">
                         </div>
-                                        
+
                     </div>
                     <div class="header-menu">
                         <div class="enumenu_ul">
                             <ul>
                                 <li>
                                     <a href="{{ route('home') }}" title="">{{__('sentence.home') }}</a>
-                                </li>          
-                                
-                                <li>                                   
+                                </li>
+
+                                <li>
                                     <a href="javascript:;" title="" class="cart-icon">{{__('sentence.cart') }} <span>
-                                        <?php 
+                                        <?php
                                         $count = 0;
                                         if(session('cart')){
                                             foreach( session('cart') as $value){
@@ -55,22 +55,22 @@
                                         </li>
                                         <li>
                                             <a href="{{route('your.order')}}" title="">{{__('sentence.yourorder') }}</a>
-                                        </li>   
+                                        </li>
                                         <li>
                                            <a href="javascript:;" title=""  class="messages-btn">{{__('sentence.msg') }}<span style="margin-left:3px;">{{ \App\Model\Helper::unreadOrderConversation()}}</span></a>
-                                        </li>                                    
+                                        </li>
                                         <li>
                                             <a href="{{ route('wlogout') }}" title="">{{__('sentence.logout') }}</a>
-                                        </li>                                        
+                                        </li>
                                     </ul>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <select class="selectbox" onchange="location = this.options[this.selectedIndex].value;">
                                         <option value="{{ url('locale/en') }}" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
-                                        <option value="{{ url('locale/es') }}" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Español</option>                                 
+                                        <option value="{{ url('locale/es') }}" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>Espaï¿½ol</option>
                                     </select>
-                                </li>
-                                
+                                </li> --}}
+
                             </ul>
                         </div>
                     </div>
@@ -79,12 +79,12 @@
                             <img src="{{asset('public/frontend/images/search-icon.png')}}" alt="">
                         </a>
                         <div class="header-search-wrap">
-                            
+
                             <input type="text" autocomplete="off" id="search" class="form-control input-lg" placeholder="{{__('sentence.search') }}">
                         </div>
                         <!-- <input type="search" placeholder="Search for chef, food, etc." name="search" id="search"> -->
                         <!-- <button type="submit" name="btnSubmit" id="btnSubmit"><img src="{{asset('public/frontend/images/search-icon.png')}}" alt=""></button> -->
-                        
+
                     </div> --}}
 
                 </div>
@@ -92,5 +92,5 @@
     </div>
 </header>
 <section class="header-location-wrap-mob"></section>
-@include('frontend.layouts.customer-chat') 
+@include('frontend.layouts.customer-chat')
 

@@ -12,7 +12,7 @@ $location = new \App\Model\Helper();
                 @php
                 $loc=$location::getDeserialize(Cookie::get('location'));
                 @endphp
-                
+
                 <input type="text" name="location" id="location" placeholder="{{!empty($loc)?$loc['address']:''}}" value="" required="">
                 <input type="hidden" name="lat" id="lat">
                 <input type="hidden" name="log" id="log">
@@ -21,14 +21,19 @@ $location = new \App\Model\Helper();
                 <input type="hidden" name="city" id="city">
                 <input type="hidden" name="address" id="address">
 
-               
+
             </div>
-            
+
         </li>
     </ul>
     {{ Form::close() }}
-    
+
 </div>
 <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<?php echo config('view.google_api_key'); ?>"></script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key={{ config('view.google_api_key') }}&libraries=places&callback=initializeAutocomplete"
+    async defer>
+</script>
+
 <script type="text/javascript" src="{{ asset('public/frontend/js/pages/home.js')}}"></script>

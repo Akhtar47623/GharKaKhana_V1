@@ -27,7 +27,7 @@
                 <div class="header-menu">
                     <div class="enumenu_ul">
                         <ul>
-                            
+
                             <li>
                                 <a href="javascript:;" title="">Sign in</a>
                                 <ul>
@@ -35,14 +35,14 @@
                                         <a href="{{ route('customer-sign-in') }}" title="">Customer Sign In</a>
                                     </li> --}}
                                     <li>
-                                        <a href="{{ route('chef-sign-in') }}" title="">Chef Sign In</a>                        
-                                    </li>                                        
+                                        <a href="{{ route('chef-sign-in') }}" title="">Chef Sign In</a>
+                                    </li>
                                 </ul>
-                            </li>                        
-                        </ul>                    
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -61,8 +61,8 @@
                     @endif
                 </ul>
             </div>
-            </div> 
-            <!-- @if (!request()->cookie('accept-cookie')) 
+            </div>
+            <!-- @if (!request()->cookie('accept-cookie'))
             <div class="cookies-block">
                 <div class="cookies-block-content">
                     <h5>This website uses cookies</h5>
@@ -70,16 +70,16 @@
                     <button class="okay-btn">Allow Cookies</button>
                 </div>
             </div>
-            @endif -->    
-                
+            @endif -->
+
         </section>
     </div>
-    <script type="text/javascript" src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="90ac6305-05ab-4de0-91de-ecdb8728697d">
-    </script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.min.js')}}"></script>    
+   <!-- <script type="text/javascript" src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="90ac6305-05ab-4de0-91de-ecdb8728697d">
+    </script> -->
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.min.js')}}"></script>
     <!-- <script type="text/javascript" src="{{ asset('public/frontend/js/general.js')}}"></script> -->
     <script type="text/javascript" src="{{ asset('public/frontend/js/menu.js')}}"></script>
     <script type="text/javascript" src="{{ asset('public/frontend/js/pages/landing.js')}}"></script>
-    
+
 </body>
 </html>
