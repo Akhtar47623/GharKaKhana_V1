@@ -203,7 +203,7 @@ class WebController extends Controller
     }
     public function custRegistration(){
         //return redirect()->route('home');
-        $countries = Countries::where('id', 142)->pluck('name', 'id');
+        $countries = Countries::where('id', 166)->pluck('name', 'id');
        	$pageData = ['countries'=>$countries];
         return view('frontend.registration.customer-reg', $pageData);
     }
